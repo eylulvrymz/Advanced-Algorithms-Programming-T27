@@ -20,6 +20,9 @@ def balance_bracks (s):
         return True,comp_count
     else:
         return False, comp_count
-try_out = "({[]})"
-result, total_comparison = balance_bracks (try_out)
-print(f"Balanced: {result}, Total Comparison: {total_comparison}")
+        
+#testing
+print("Test 1 (Balanced):", balance_bracks("({[]})"))
+print("Test 2 (Empty):", balance_bracks(""))
+print("Test 3 (No Opener):", balance_bracks("]"))
+print("Test 4 (Leftover):", balance_bracks("((("))
