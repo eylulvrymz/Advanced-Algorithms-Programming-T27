@@ -9,3 +9,4 @@ Yan SHEN
 **Assigned Questions:**
 
 Eylül Safiye Varyemez: Questions 4 & 5
+Elenie Girma Wakjira: Questions 2 & 3
