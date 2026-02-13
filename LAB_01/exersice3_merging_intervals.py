@@ -22,11 +22,10 @@ def merge_intervals(interval_list):
             merged_interval.append(current)
     return merged_interval, comp_count
 #testing
-test_data=[[1,3],[2,6],[15,18],[8,10]]
-final_merged, total_comparison = merge_intervals(test_data)
-print("Merged Intervals:")
-print(final_merged)
-print("Total Comparisons:")
-print(total_comparison)
+print("Test 1 (Lab Example):", merge_intervals([[1,3],[2,6],[15,18],[8,10]]))
+print("Test 2 (Empty):", merge_intervals([]))
+print("Test 3 (Single):", merge_intervals([[1, 5]]))
+print("Test 4 (No Overlaps):", merge_intervals([[1, 2], [10, 12]]))
+
         
     
