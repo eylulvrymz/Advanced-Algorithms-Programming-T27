@@ -4,14 +4,12 @@ def polynom_evaluation(coeffs, x):
     result = coeffs[n]
 
     # Create a loop backwards from (n-1) to 0
-    # In Python, range(start, stop, step) 
-    # goes from n-1 down to 0 (the -1 is the exclusive stop)
     for i in range(n - 1, -1, -1):
         result = coeffs[i] + (result * x)
 
     return result
 
-# --- Example Usage ---
+# --- Example ---
 coeffs = [3, -2, 0, 5]  # P(x) = 3 - 2x + 0x^2 + 5x^3
 x_val = 2.0
 
