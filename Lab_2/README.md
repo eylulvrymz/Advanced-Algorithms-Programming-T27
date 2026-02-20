@@ -29,3 +29,20 @@ Sorted array is great for memory but you need to binary search to find people. I
 users nicks are continuous integers, you can use Bit Arrays.
 
 3. I would choose the Hash set.
+
+## Exercise 3: Friend Recommendation by Common Interests
+**Done by:** yanshen1203 (Java)
+
+Used a 2D matrix to store how much each user likes each interest (0–10).
+Implemented cosine similarity to compare users, then recommended the top-K
+most similar users who aren't already friends. Also added collaborative
+filtering to suggest new interests based on what similar users like.
+
+---
+
+## Exercise 4: Mutual Followers Matrix
+**Done by:** yanshen1203 (Java)
+
+Used a 2D boolean matrix to represent who follows who.
+Implemented follow, unfollow, get followers/following, mutual follow detection,
+and an influence score based on follower + following count.
