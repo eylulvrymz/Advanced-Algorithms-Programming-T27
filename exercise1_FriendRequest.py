@@ -69,3 +69,17 @@ sentiment4, spam4 = checkMessage(msg4)
 print("Message: ", msg4)
 print("Sentiment: ", sentiment4, "| Spam: ", spam4)
 print()
+
+# test for an empty string
+edge1 = ""
+sent1, sp1 = checkMessage(edge1)
+print("Message: ", edge1)
+print("Sentiment: ", sent1, "| Spam: ", sp1)
+print()
+
+# only punctuation
+edge2 = "!!!!!"
+sent2, sp2 = checkMessage(edge2)
+print("Message: ", edge2)
+print("Sentiment: ", sent2, "| Spam: ", sp2)
+print()
