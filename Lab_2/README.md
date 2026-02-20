@@ -7,6 +7,8 @@ Elenie Girma Wakjira: Q1&Q4
 Eylül Safiye Varyemez: Q2&Q4
 
 Yan Shen: Q3&Q4
+Q1
+For exercise 1 we analyze a given message and also check for spam. For each character in the message we count the number of upper case letters, total number of letters, punctuations and also number of repeating letters to check for spamming. And then we use these counts to determine the sentiment of the messages. And the time complexity is O(n) because the loop goes from the first character to the last only one time. Space complexity is O(1) because we are only using a few variables to store counts, which doesn't change regardless of how long the message is.
 
 **Q2:**
 
