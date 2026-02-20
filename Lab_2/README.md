@@ -1,2 +1,25 @@
-# Advanced-Algorithms-Programming-T27
-TPs of the class for T27
+(Team members and assigned exercises, Brief description of each solution, Complexity analysis summary)
+
+**Team 27**
+
+Elenie Girma Wakjira: Q1&Q4
+
+Eylül Safiye Varyemez: Q2&Q4
+
+Yan Shen: Q3&Q4
+
+**Q2:**
+
+Explanation: This code builds a social network engine using Set Theory to compare and connect users. We used three main functions to achieve that (mutuals, different ones and unions). Then we set up a score system to see the similarity between users. Using this score, we returned suggestions to the user.
+
+Complexity Analysis Questions:
+
+1. The time complexity for this set intersection is O(min(m,n)). Because in order to find the
+intersection, you typically iterate through the smaller set and check if they exist in the
+larger set.
+
+2. Hash set takes the same amount of time even if you have 10 friends or 10M friends.
+Sorted array is great for memory but you need to binary search to find people. If the
+users nicks are continuous integers, you can use Bit Arrays.
+
+3. I would choose the Hash set.
