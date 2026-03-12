@@ -1,2 +1,5 @@
-# Advanced-Algorithms-Programming-T27
-TPs of the class for T27
+**LAB 03 Explanation**
+
+Eylül Safiye Varyemez : Exercise 1
+
+**Exercise 1**
