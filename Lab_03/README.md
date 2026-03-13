@@ -20,3 +20,15 @@ The key reason we used a Doubly Linked List is the *prev* pointer, it lets us go
 
 **Complexity Analysis**
 The doubly linked list trades a small amount of extra memory for significant performance gains. Backward navigation drops from O(n) to O(1), and node removal becomes O(1) since both neighbors are always directly reachable. This overhead is only worth it when bidirectional traversal is frequent, such as in story feeds, browser history, music playlists, or undo/redo systems. If navigation is one-directional, a singly linked list is the more memory-efficient choice.
+ 
+exercice 3
+yan shen
+# Exercise 3 – Priority Queue
+
+This is exercise 3 of LAB3. It's a priority queue using a sorted linked list, posts with higher engagement scores go to the top.
+
+Score = likes x1 + comments x2 + shares x3
+
+To run it just do javac *.java then java Main.
+
+One thing worth knowing: decayOlderThan uses resort() instead of refreshAll() because refreshAll recalculates scores from the original data and would just undo the decay. Took me a while to notice that one.
