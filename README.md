@@ -11,6 +11,7 @@ Yan Shen:
 
 **Exercise 1:**
 For this exercise we are trying to model the structure where users reply to comments and create deeply nested threads. We use recursive data structure; CommentNode, where each comment contains the user id, comment id, time stamp, their content, likes and replies. Each comment will contain a list of replies and each reply acting as comments and going on like that. We use recursive functions to traverse, search, count, and manage the nested threads to perform real operations like displaying comment section or searching for a user's comments. 
+
 **Functions implemented:**
 - display_thread: prints the thread with indentation showing nesting level
 - count_total_comments: counts all comments including nested replies
