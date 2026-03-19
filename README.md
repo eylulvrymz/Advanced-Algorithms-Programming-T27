@@ -22,6 +22,14 @@ For this exercise we are trying to model the structure where users reply to comm
 - delete_comment: removes a comment and all its replies
 - get_thread_without_comment: returns a fresh copy without the deleted comment
   
+**Complex analysis summary**
+
+All functions traverse each comment node exactly once, giving a time 
+complexity of O(n) where n is the total number of comments. Space complexity 
+is O(d) where d is the maximum nesting depth, since each recursive call adds 
+one frame to the call stack. For very deep threads, this risks stack overflow, 
+which can be avoided by converting to an iterative approach.
+
 **Exercise 2:**
 
 In this exercise, we defined a Post dataclass with an engagement_score property that automatically computes likes×1 + comments×2 + shares×3. For Part A, max_engagement recursively splits the posts array in half and returns the larger engagement score between the two halves. Part B follows the same divide-and-conquer splitting logic in sum_engagement to total all scores, which average_engagement then divides by the number of posts. Part C’s count_above_threshold uses the same recursive splitting but counts only the posts whose engagement score exceeds the given threshold at the leaf level. Part D implements classic Merge Sort through two functions — merge_sort_by_engagement recursively splits the array and merge combines the two sorted halves by comparing engagement scores — resulting in a fully sorted posts list. Finally, find_peak_hour takes a 24-element hourly likes array and recursively narrows down to the peak hour by comparing the middle element with its right neighbor, leveraging the unimodal nature of the data to halve the search space at each step.​​​​​​​​​​​​​​​​
