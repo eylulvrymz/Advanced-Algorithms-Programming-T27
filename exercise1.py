@@ -94,7 +94,6 @@ def build_main_thread():
     return root
 
 
-
 def run_main_test():
     print("MAIN EXAMPLE THREAD")
 
@@ -130,7 +129,7 @@ def run_main_test():
     display_thread(new_thread2[0])
 
 
-# ── Edge Case Tests ──────────────────────────────────────────────────────────
+#  Edge Case Tests 
 
 def run_edge_tests():
     now = datetime.now()
