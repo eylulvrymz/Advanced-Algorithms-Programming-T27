@@ -7,7 +7,7 @@ Elenie Girma Wakjira:Exercise 1
 
 Eylül Safiye Varyemez: Exercise 2
 
-Yan Shen:
+Yan Shen：exercise 3
 
 **Exercise 1:**
 For this exercise we are trying to model the structure where users reply to comments and create deeply nested threads. We use recursive data structure; CommentNode, where each comment contains the user id, comment id, time stamp, their content, likes and replies. Each comment will contain a list of replies and each reply acting as comments and going on like that. We use recursive functions to traverse, search, count, and manage the nested threads to perform real operations like displaying comment section or searching for a user's comments. 
@@ -37,3 +37,12 @@ In this exercise, we defined a Post dataclass with an engagement_score property 
 Complexity Analysis Questions:
 
 The divide-and-conquer functions (max_engagement, sum_engagement, count_above_threshold) all run in O(n) since every post is visited exactly once, proven by T(n) = 2·T(n/2) + O(1) via the Master Theorem. Merge Sort outperforms Insertion Sort significantly for large inputs with O(n log n) vs O(n²) worst case, though Insertion Sort can be faster for very small arrays. Merge Sort’s recursion depth is O(log n) — only 13-14 levels for 10,000 posts — making stack overflow virtually impossible. Finally, find_peak_hour achieves O(log n) by exploiting the unimodal property of the array: comparing likes[mid] with likes[mid+1] determines which half contains the peak, halving the search space each time, but the algorithm would fail if the array had multiple peaks.​​​​​​​​​​​​​​​​
+
+
+
+
+**Exercise 3 **
+is about converting recursion to iteration using an explicit stack.
+We implement a comment thread flattener both recursively and iteratively, 
+compare their stack memory usage, and discuss when to use each approach.
+The exercise also covers tail recursion and why iterative is safer for production environments with deep nested structures.
