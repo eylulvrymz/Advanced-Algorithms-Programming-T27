@@ -1,7 +1,3 @@
-# ============================================================
-#  LAB 5 – Exercise 2: Tree Traversals for Content Processing
-# ============================================================
-
 class CategoryNode:
     def __init__(self, category_id, name, post_count):
         self.category_id = category_id
@@ -9,11 +5,6 @@ class CategoryNode:
         self.post_count  = post_count
         self.left        = None
         self.right       = None
-
-
-# ─────────────────────────────────────────
-#  PART A – In-order Traversals
-# ─────────────────────────────────────────
 
 def in_order_collect(node):
     """Return a list of category names in in-order sequence."""
@@ -65,9 +56,6 @@ def in_order_find_kth(node, k, state):
     return in_order_find_kth(node.right, k, state)
 
 
-# ─────────────────────────────────────────
-#  PART B – Pre-order Traversals
-# ─────────────────────────────────────────
 
 def pre_order_export(node, depth=0):
     """Return a formatted, indented string of the tree (root → left → right)."""
@@ -119,9 +107,7 @@ def pre_order_serialize(node):
     return result
 
 
-# ─────────────────────────────────────────
-#  PART C – Post-order Traversals
-# ─────────────────────────────────────────
+
 
 def post_order_total_posts(node):
     """Compute total posts in a category including all its subcategories."""
