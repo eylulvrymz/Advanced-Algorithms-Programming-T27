@@ -59,3 +59,31 @@ def run_tests():
 if __name__ == "__main__":
     # Ensure your SocialGraph class is defined above this
     run_tests()
+
+"""
+Results:
+
+--- Starting SocialGraph Edge Case Tests ---
+
+[Case 1: Standard Network]
+Isolated Users (Expected ['Frank']): ['Frank']
+Connected Components Count (Expected 3): 3
+Path Alice -> Charlie (Expected True): True
+Path Alice -> David (Expected False): False
+
+[Case 2: Empty Graph]
+Components (Expected []): []
+Isolated (Expected []): []
+
+[Case 3: Complete Graph]
+Is Connected (Expected True): True
+Component Sizes (Expected [3]): [3]
+
+[Case 4: Cyclic Graph]
+DFS Iterative Order (No infinite loop): ['A', 'C', 'B']
+
+[Case 5: Single User]
+Is Connected (Expected True): True
+Isolated Users (Expected ['Zane']): ['Zane']
+
+"""
