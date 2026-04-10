@@ -23,3 +23,23 @@ Insights Generation: The engine can now uncover friendship groups (connected com
 Efficient Operations: All operations, such as verifying connectivity and degree calculation, are optimized for optimal performance.
 
 **Complexity Analysis:** In order to maximize the efficiency of the social network analysis, an adjacency list will be used to perform DFS since its complexity of O(V + E) is vastly better compared to the O(V^2) complexity of the adjacency matrix in traversing through the nodes' neighbors. Although a recursive implementation appears more straightforward, it introduces a huge threat to stability for the case of 1 million users since it is very easy to surpass the recursion depth of the computer, causing a stack overflow.
+# Exercise 3 – BFS Social Network
+
+Java implementation of BFS on a social network graph.
+
+## Methods
+- `bfs` – basic traversal
+- `bfsWithDistances` – traversal with distance tracking
+- `shortestPath` – shortest path between two users
+- `degreesOfSeparation` – number of hops (-1 if unreachable)
+- `friendsWithinKHops` – everyone reachable within k steps
+- `computeAverageDegreesOfSeparation` – average distance across all pairs
+- `getDistanceDistribution` – distance breakdown from a given user
+- `recommendFriends` – friend suggestions based on mutual connections
+
+## Run
+```bash
+javac Exercise3.java
+java Exercise3
+```
+Requires Java 8+, no external dependencies.
