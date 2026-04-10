@@ -1,6 +1,12 @@
 # Advanced-Algorithms-Programming-T27
 TPs of the class for T27
+LAB 6 REVISION
 
+Elenie Girma Wakjira:Exercise 1
+
+Eylül Safiye Varyemez: Exercise 2
+
+Yan Shen：exercise 3
 
 **Exercise 1:** For this exercise we built a graph structure using a SocialGraph class that maintains both an adjacency matrix and an adjacency list simultaneously, storing the number of users and edges alongside them. We implemented core operations like add_friendship, remove_friendship, and are_friends, as well as utility functions to retrieve friends, degree, and graph-level statistics. For graph property analysis, we built is_complete_graph, graph_density, and degree_distribution. We also implemented conversion functions to switch between the two representations in both directions, and tested all functions against edge cases like empty graphs, single-node graphs, and disconnected users.
 
