@@ -12,6 +12,14 @@ Yan Shen：exercise 3
 
 **Complexity Analysis:** are_friends takes O(1) with the adjacency matrix due to direct array access, but O(deg(u)) with the adjacency list since the linked list must be traversed. For a network the size of Facebook (n = 10⁹, avg degree 150), the matrix would require roughly 125,000 TB while the adjacency list needs only ~1.8 TB, making the list around 70,000× more space-efficient. Although the matrix offers faster edge removal at O(1) compared to O(deg(u)) for the list, the O(n²) memory cost makes it entirely impractical for large sparse networks.
 
-**Exercise 2:**
+**Exercise 2:** For this exercise, here's what we achieved:
+
+Scalability: We leveraged an adjacency list for storing one million users, making sure that we had O(V+E) complexity, which is suitable for sparse graphs.
+
+Stability: We adopted iterative DFS to avoid the limitations of recursion, thus avoiding stack overflow when exploring deep relationships.
+
+Insights Generation: The engine can now uncover friendship groups (connected components), spot lone users, and track particular connection routes between users.
+
+Efficient Operations: All operations, such as verifying connectivity and degree calculation, are optimized for optimal performance.
 
 **Complexity Analysis:** In order to maximize the efficiency of the social network analysis, an adjacency list will be used to perform DFS since its complexity of O(V + E) is vastly better compared to the O(V^2) complexity of the adjacency matrix in traversing through the nodes' neighbors. Although a recursive implementation appears more straightforward, it introduces a huge threat to stability for the case of 1 million users since it is very easy to surpass the recursion depth of the computer, causing a stack overflow.
