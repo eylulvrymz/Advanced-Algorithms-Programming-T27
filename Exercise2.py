@@ -123,3 +123,17 @@ print("Connected Components:", social_net.find_connected_components())
 print("Isolated Users:", social_net.find_isolated_users())
 print("Is there a path from Alice to Charlie?:", social_net.has_path("Alice", "Charlie"))
 print("Is there a path from Alice to David?:", social_net.has_path("Alice", "David"))
+
+"""
+Implementation Points to Remember:
+
+Recursion Limit: As social networks grow, such as scaling to 1 million people, 
+dfs_recursive() will definitely exceed the default recursion limit of Python. 
+To prevent this from happening, it is much better to use dfs_iterative() since it 
+uses a stack explicitly.
+
+Iteration Stack: When calling the function find_path(), adding a whole path into 
+the stack serves well for small graph sizes but not very efficient when it comes 
+to deep structures in a network.
+
+"""
