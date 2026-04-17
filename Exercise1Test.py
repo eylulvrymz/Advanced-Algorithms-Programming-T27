@@ -90,4 +90,50 @@ pts = [(-5, -5), (-1, -1)]
 check("Negative coordinates counted correctly",
       count_points_in_region(pts, (-10, -10, 10, 10)) == 2)
 
+# TESTS: find_dense_regions
+
+print("\n── find_dense_regions ────────────────────────────────────────")
+
+# Normal: all points in one corner → that corner should be dense
+pts = [(x, y) for x in range(0, 20) for y in range(0, 20)]  # 400 pts in 0-20 box
+dense = find_dense_regions(pts, 0, 0, 100, 100, min_size=10, density_threshold=0.01)
+check("Clustered points → at least 1 dense region", len(dense) > 0)
+
+# Verify dense regions are actually inside the original space
+check("Dense regions within bounds",
+      all(x >= 0 and y >= 0 and x + w <= 100 and y + h <= 100
+          for (x, y, w, h) in dense))
+
+# Edge: no points → no dense regions
+dense = find_dense_regions([], 0, 0, 100, 100, min_size=10, density_threshold=0.01)
+check("No points → no dense regions", len(dense) == 0)
+
+# Edge: very high threshold → nothing passes
+pts = [(50, 50)]
+dense = find_dense_regions(pts, 0, 0, 100, 100, min_size=10, density_threshold=999)
+check("Impossibly high threshold → no dense regions", len(dense) == 0)
+
+# Edge: threshold = 0 → every non-empty region qualifies (at least 1 result)
+pts = [(50, 50)]
+dense = find_dense_regions(pts, 0, 0, 100, 100, min_size=10, density_threshold=0)
+check("Threshold=0 with 1 point → at least 1 region found", len(dense) > 0)
+
+# Edge: min_size larger than region → treated as leaf immediately if dense
+pts = [(5, 5)] * 50
+dense = find_dense_regions(pts, 0, 0, 10, 10, min_size=20, density_threshold=0.01)
+check("min_size > region → returns region as leaf if dense", len(dense) == 1)
+
+# Edge: region with zero area
+dense = find_dense_regions([(5, 5)], 5, 5, 0, 0, min_size=1, density_threshold=0.01)
+check("Zero-area region → no dense regions returned", len(dense) == 0)
+
+
+# Summary
+
+print(f"\n{'='*50}")
+print(f"Results: {passed} passed, {failed} failed out of {passed + failed} tests")
+if failed == 0:
+    print("All tests passed ✓")
+else:
+    print(f"{failed} test(s) failed ✗")
 
