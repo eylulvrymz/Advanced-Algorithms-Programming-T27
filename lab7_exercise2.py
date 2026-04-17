@@ -5,9 +5,7 @@ from matplotlib.patches import Polygon
 import math
 
 
-# ─────────────────────────────────────────────
 # FUNCTION 1 – draw_sierpinski
-# ─────────────────────────────────────────────
 
 def draw_sierpinski(ax, x, y, size, depth):
     """
@@ -36,9 +34,9 @@ def draw_sierpinski(ax, x, y, size, depth):
     draw_sierpinski(ax, x + half / 2, y + half * math.sqrt(3) / 2, half, depth - 1)
 
 
-# ─────────────────────────────────────────────
+
 # FUNCTION 2 – draw_tree
-# ─────────────────────────────────────────────
+
 
 def draw_tree(ax, x, y, length, angle, depth):
     """
@@ -68,9 +66,8 @@ def draw_tree(ax, x, y, length, angle, depth):
     draw_tree(ax, x_end, y_end, length / 2, angle - 30, depth - 1)
 
 
-# ─────────────────────────────────────────────
+
 # FUNCTION 3 – fractal_dimension
-# ─────────────────────────────────────────────
 
 def fractal_dimension(fractal_image, box_sizes):
     """
@@ -106,10 +103,10 @@ def fractal_dimension(fractal_image, box_sizes):
     return D, log_inv_sizes, log_counts
 
 
-# ─────────────────────────────────────────────
+
 # HELPER – render a Sierpinski triangle to a
 #          binary image for box-counting
-# ─────────────────────────────────────────────
+
 
 def sierpinski_to_image(depth=5, img_size=512):
     """Renders Sierpinski triangle into a binary numpy array."""
@@ -134,15 +131,15 @@ def sierpinski_to_image(depth=5, img_size=512):
     return binary
 
 
-# ─────────────────────────────────────────────
+
 # MAIN – run all three and display results
-# ─────────────────────────────────────────────
+
 
 def main():
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
     fig.patch.set_facecolor("#1a1a2e")
 
-    # ── Plot 1: Sierpinski Triangle ──────────
+    # Plot 1: Sierpinski Triangle
     ax1 = axes[0]
     ax1.set_facecolor("#1a1a2e")
     ax1.set_xlim(0, 1)
@@ -153,7 +150,7 @@ def main():
 
     draw_sierpinski(ax1, 0, 0, 1, depth=5)
 
-    # ── Plot 2: Fractal Tree ─────────────────
+    # Plot 2: Fractal Tree
     ax2 = axes[1]
     ax2.set_facecolor("#1a1a2e")
     ax2.set_xlim(-1.5, 1.5)
@@ -165,7 +162,7 @@ def main():
     # Start at bottom-center, grow upward (90°)
     draw_tree(ax2, 0, 0, 1.0, angle=90, depth=8)
 
-    # ── Plot 3: Fractal Dimension ────────────
+    # Plot 3: Fractal Dimension
     ax3 = axes[2]
     ax3.set_facecolor("#1a1a2e")
     ax3.tick_params(colors="white")
