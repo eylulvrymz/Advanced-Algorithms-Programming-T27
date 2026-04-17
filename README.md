@@ -20,3 +20,17 @@ The Fractal Tree (draw_tree): The function simulates a tree structure using a re
 The Fractal Dimension (fractal_dimension): The box-counting method was used to estimate the fractal dimension by counting the number of overlapped grids for different grid sizes. The calculation is done based on the slope of log(number of grids) vs log(1/grid size).
 
 **Complexity Analysis:** Complexity of the Sierpinski Triangle: As each iteration of the triangle divides it into three triangles identical to the initial one, the complexity of drawing the triangles follows a formula of 3^d. Thus, for a depth of recursion of 5, the number of triangles will be equal to 3^5 = 243. Dimensions of Fractals (D): The dimension of a straight line will be equal to D = 1 since it fully occupies a one-dimensional space.The dimension of a fully filled square will be equal to D = 2 as it fully occupies a two-dimensional space.The dimension of the Sierpinski Triangle lies somewhere in between (about 1.585).
+
+# Exercise 3 – Procedural Generation
+
+Three functions: `midpointDisplacement` splits a line recursively with random offsets, `generateTerrain` builds a 2D height map using diamond-square, and `detectArtifacts` flags cells where height changes too sharply.
+
+## Run
+
+```bash
+javac Exercise3.java exercise3_test.java
+java Exercise3
+java exercise3_test
+```
+
+Higher roughness = spikier terrain. Higher depth = more detail. Adjust the threshold in `detectArtifacts` to control sensitivity.
