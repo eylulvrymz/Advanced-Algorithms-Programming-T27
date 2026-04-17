@@ -198,7 +198,7 @@ def main():
     print(f"  Theoretical value (Sierpinski) ≈ 1.5850")
 
     plt.tight_layout(pad=2)
-    plt.savefig("/mnt/user-data/outputs/lab7_exercise2.png", dpi=150,
+    plt.savefig("lab7_exercise2.png", dpi=150,
                 bbox_inches="tight", facecolor=fig.get_facecolor())
     print("\n  Plot saved → lab7_exercise2.png")
     plt.show()
