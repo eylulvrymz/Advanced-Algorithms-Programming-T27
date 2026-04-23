@@ -1,7 +1,10 @@
 # Advanced-Algorithms-Programming-T27
 TPs of the class for T27
+
 Elenie Girma Wakjira
+
 Eylul Safiye Varyemez
+
 Yan Shen
 
 **Exercise 1:** For this exercise we built a user management system using a Binary Search Tree where each node stores a user ID, name, and friend list. insert places users by comparing IDs recursively and ignores duplicates. find traverses left or right at each node, returning the node or None. inorder_traversal performs a left-root-right recursion, naturally producing a sorted list of user IDs with no additional sorting step. delete handles all three cases ; leaf removal, single-child promotion, and the two-child case where the node is replaced by its inorder successor — preserving BST ordering throughout. suggest_friends collects direct friends into a set for O(1) lookup, counts how often each friend-of-friend candidate appears across all friend lists, excludes the user and their existing connections, and returns the top results by frequency. The analytics functions get_height, is_balanced, and get_leaf_count all operate through recursive tree traversal, with is_balanced using a sentinel value of −2 to short-circuit as soon as a violation is detected. We tested all functions against edge cases including empty trees, duplicate insertions, deletion of leaves and two-child nodes, friend references to users not in the tree, and sequential insertion producing a degenerate right-skewed chain.
