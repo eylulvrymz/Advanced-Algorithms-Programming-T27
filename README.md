@@ -14,3 +14,10 @@ Yan Shen
 **Exercise 2:** For this exercise, the TrendingHeap class was created with a max-heap data structure based on a Python list of dictionaries containing posts' likes, post_id and timestamp. The heap order principle, the maximum value being the root of the heap, is upheld with the help of two helper methods: _heapify_up and _heapify_down, used whenever there is any alteration made to the heap. In order to fulfill the request for efficient modifications without going through the entire array, a dictionary called pos was used to map each post_id to the index in which it currently resides in the heap. The five required methods were implemented correctly, including get_top_k which uses a copy of the heap rather than destroying the original one.
 
 **Complexity Analysis:** For the complexity analysis of Exercise 2, `get_top_k(k)` takes O(n + k log n) because it calls `pop_max` k times with the copied heap structure, which is much faster compared to the O(n log n) required to sort all posts, given that only k items will be ordered. `update_likes` would take O(n) for every update with a sorted array as a result of the reinsertion cost caused by value change, while the heap will accomplish this in O(log n) with `_heapify_up` and `_heapify_down` methods, where the location is given in O(1) using `pos`. Finally, when you need to automatically remove posts that have expired after 24 hours, the best way would be lazy deletion, done in `pop_max` or `peek_max` methods with a time check within, without allocating additional memory.
+
+决定采用简洁单段英文格式。# Exercise 3: Prefix and Range Trees
+
+This exercise implements two data structures for a social network use case.
+Part A builds an AutocompleteTrie that supports fast prefix-based username search
+in O(P + R) time. Part B builds an ActivitySegmentTree that stores daily post counts
+and answers range sum, max, and min queries in O(log n) time. Run Exercise3Test.java to verify all functionality.
