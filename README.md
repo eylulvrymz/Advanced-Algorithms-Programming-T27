@@ -1,8 +1,8 @@
-# Advanced-Algorithms-Programming-T27
+# Advanced-Algorithms-Programming-T27-LAB09
 
 Eylül Safiye Varyemez: Exercise 2
 
-**Exercise 2:**
+**Exercise 2:** For Exercise 2, we implemented all three required functions. We started with `is_valid_labeling` which checks if a given labeling is valid by simply going through every edge and making sure no two connected nodes share the same label, hitting the required O(E) complexity. Then we built `assign_labels` which tries to color the graph using at most k colors through a backtracking approach — it goes node by node, tries each color, and if it gets stuck it undoes its last choice and tries something else, which covers the greedy backtracking requirement. Finally `find_min_labels` ties it all together by repeatedly calling `assign_labels` starting from k = 1 and going up until it finds a valid coloring, which gives us the minimum number of labels needed. On top of that, we wrote a test file covering all the edge cases the assignment asks about — an empty graph, a single node, a fully connected graph, a two node graph, an odd cycle, an even cycle, and a sparse path — each one testing both the minimum label count and whether a given labeling is valid or not. Everything was kept simple and straightforward, matching the pseudocode we wrote, so the logic is easy to follow and verify.
 
 **Complexity Analysis:**
 
