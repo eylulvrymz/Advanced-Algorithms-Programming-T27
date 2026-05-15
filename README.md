@@ -1,7 +1,7 @@
 # Advanced-Algorithms-Programming-T27-LAB09
 Elenie Girma Wakjira: Exercise 1
 Eylül Safiye Varyemez: Exercise 2
-
+shen yan：exercise3
 **Exercise 1:** For this exercise we implemented three functions to find the smallest group of users that covers an entire social network. is_valid_coverage marks each selected user and their neighbors as covered, then checks that no node was left out. find_minimum_coverage finds the exact smallest dominating set by trying all possible subsets from smallest to largest and stopping as soon as a valid one is found. find_fast_coverage is a faster greedy version that repeatedly picks whichever user covers the most uncovered nodes at each step until everyone is covered. We tested all three against empty graphs, single nodes, isolated nodes, paths, stars, complete graphs, triangles, and cycles, and also compared the greedy and exact results side by side on small graphs.
 
 **Complexity Analysis:** is_valid_coverage runs in O(N + E) since it touches each node and edge at most once. find_minimum_coverage runs in O(2^N · (N + E)) in the worst case as it enumerates all subsets, making it feasible only for small graphs up to around N = 20. find_fast_coverage runs in O(N²) since at each of the N rounds it scans all nodes and their neighbors to find the best candidate, making it practical even for very large graphs. The greedy solution is not guaranteed to find the minimum — it provides an O(log N) approximation — meaning it may return a slightly larger set than optimal on certain graph structures. Memory usage is O(N) across all three functions for the covered array and the uncovered set tracked during the greedy loop.
@@ -19,3 +19,24 @@ The denser the graph, the harder it is to color. An empty graph needs just 1 lab
 
 Checking vs Finding:
 This is the key insight of the whole exercise. Verifying a labeling is O(E) — just check every edge once. Finding the labeling in the first place is O(k^N) in the worst case — exponential. For N = 30 and k = 3 that's around 200 trillion operations, which is completely infeasible. This gap between easy verification and hard construction is exactly why Graph Coloring is NP-Complete, and why in practice people use greedy heuristics or approximations rather than searching for the exact minimum.
+
+# Exercise 3 — Ad Campaign Optimization
+
+## Files
+- `exercise3.java` — main code
+- `exercise3Test.java` — tests
+
+## How to run
+```bash
+javac exercise3.java exercise3Test.java
+java exercise3
+java exercise3Test
+```
+
+## What it does
+Given a budget and a list of users (each with a cost and influence),
+find the best subset of users to maximize total reach.
+
+- `maximize_reach` — exact answer using DP
+- `is_within_budget` — checks if a selection fits the budget
+- `fast_alternative_strategy` — faster but not always optimal (greedy)
